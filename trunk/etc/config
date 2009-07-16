@@ -1,0 +1,11 @@
+
+EchoSvc.Endpoints=default -p 12345
+EchoSvc.ThreadPool.Size=1
+EchoSvc.ThreadPool.SizeMax=25000
+
+Ice.ThreadPool.Server.Size=1
+Ice.ThreadPool.Server.SizeMax=10000
+Ice.ThreadPool.Client.Size=1
+Ice.ThreadPool.Client.SizeMax=10000
+
+
