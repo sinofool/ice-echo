@@ -3,7 +3,7 @@ package echo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HLClient {
+public class KeepEcho {
 
 	public static class StatThread extends Thread {
 		@Override
@@ -27,7 +27,7 @@ public class HLClient {
 	public static void main(String[] args) {
 		if (args.length != 5) {
 			System.out
-					.println("Usage: ReplyClient <ip> <port> <size> <concurrent> <delay>");
+					.println("Usage: KeepEcho <ip> <port> <size> <concurrent> <delay>");
 			System.exit(1);
 		}
 
