@@ -3,7 +3,7 @@ package echo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EchoClient {
+public class IncEcho {
 
 	private static final long BASIC_INTERVAL = 5000L;
 	private static final long COLLECT_INTERVAL = 10L * 1000L;
@@ -14,7 +14,7 @@ public class EchoClient {
 	 */
 	public static void main(String[] args) throws InterruptedException {
 		if (args.length != 4) {
-			System.out.println("Usage: ReplyClient <ip> <port> <size> <delay>");
+			System.out.println("Usage: IncEcho <ip> <port> <size> <delay>");
 			System.exit(1);
 		}
 
