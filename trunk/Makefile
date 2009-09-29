@@ -6,10 +6,10 @@ CLIENT_CXX_BIN=target/EchoClient
 
 all: $(SERVER_CXX_BIN) $(CLIENT_JAVA_BIN) $(CLIENT_CXX_BIN)
 
-$(SERVER_CXX_BIN):
+$(SERVER_CXX_BIN): server/cpp/main.cpp
 	mkdir -p target/generated/cpp
 	$(ICE_HOME)/bin/slice2cpp -I$(ICE_HOME)/slice slice/*.ice --output-dir=target/generated/cpp
-	g++ -g -o target/EchoServer -Iserver/cpp -Itarget/generated/cpp -I$(ICE_HOME)/include -L$(ICE_HOME)/lib64 -lIce -Wl,-rpath=$(ICE_HOME)/lib64 server/cpp/*.cpp target/generated/cpp/*.cpp
+	g++ -g -o target/EchoServer -Iserver/cpp -Itarget/generated/cpp -I$(ICE_HOME)/include -L$(ICE_HOME)/lib64 -lIce -Wl,-rpath=$(ICE_HOME)/lib64 -Wl,-rpath=lib64 server/cpp/*.cpp target/generated/cpp/*.cpp
 
 $(CLIENT_JAVA_BIN): pom.xml
 	mvn package
@@ -17,7 +17,7 @@ $(CLIENT_JAVA_BIN): pom.xml
 $(CLIENT_CXX_BIN) : client/cpp/main.cpp
 	mkdir -p target/generated/cpp
 	$(ICE_HOME)/bin/slice2cpp -I$(ICE_HOME)/slice slice/*.ice --output-dir=target/generated/cpp
-	g++ -g -o target/EchoClient -Iclient/cpp -Itarget/generated/cpp -I$(ICE_HOME)/include -L$(ICE_HOME)/lib64 -lIce -Wl,-rpath=$(ICE_HOME)/lib64 client/cpp/*.cpp target/generated/cpp/*.cpp
+	g++ -g -o target/EchoClient -Iclient/cpp -Itarget/generated/cpp -I$(ICE_HOME)/include -L$(ICE_HOME)/lib64 -lIce -Wl,-rpath=$(ICE_HOME)/lib64 -Wl,-rpath=lib64 client/cpp/*.cpp target/generated/cpp/*.cpp
 	
 
 clean:
