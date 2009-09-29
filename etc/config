@@ -1,7 +1,27 @@
 
 EchoSvc.Endpoints=default -p 12345
-EchoSvc.ThreadPool.Size=1
-EchoSvc.ThreadPool.SizeMax=25000
+EchoSvc.ThreadPool.Size=100
+EchoSvc.ThreadPool.SizeMax=100
+
+EchoSvc1.Endpoints=default -p 12344
+EchoSvc1.ThreadPool.Size=100
+EchoSvc1.ThreadPool.SizeMax=100
+
+EchoSvc2.Endpoints=default -p 12343
+EchoSvc2.ThreadPool.Size=100
+EchoSvc2.ThreadPool.SizeMax=100
+
+EchoSvc3.Endpoints=default -p 12342
+EchoSvc3.ThreadPool.Size=100
+EchoSvc3.ThreadPool.SizeMax=100
+
+EchoSvc4.Endpoints=default -p 12341
+EchoSvc4.ThreadPool.Size=100
+EchoSvc4.ThreadPool.SizeMax=100
+
+EchoSvc5.Endpoints=default -p 12340
+EchoSvc5.ThreadPool.Size=100
+EchoSvc5.ThreadPool.SizeMax=100
 
 Ice.ThreadPool.Server.Size=1
 Ice.ThreadPool.Server.SizeMax=10000
